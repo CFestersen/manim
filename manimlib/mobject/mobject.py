@@ -1947,7 +1947,7 @@ class Mobject(object):
 
     def set_clip_plane(self, vect: Vect3, threshold: float, recurse=True) -> Self:
         for submob in self.get_family(recurse):
-            submob.uniforms["clip_plane0"] = (*vect, threshold)
+            submob.uniforms["clip_plane0"][:] = (*vect, threshold)
         return self
 
     def set_clip_planes(
